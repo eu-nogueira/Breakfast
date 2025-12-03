@@ -1,4 +1,5 @@
 📌 Sobre o Projeto
+
 Este projeto foi desenvolvido com o objetivo de criar uma aplicação onde clientes possam adicionar e remover produtos do carrinho de compras de forma prática e intuitiva.
 Após uma pausa para estudar Redux, o foco principal passou a ser a manipulação global do estado do carrinho, garantindo que qualquer componente da aplicação possa interagir com os produtos.
 
