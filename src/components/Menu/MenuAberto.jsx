@@ -1,0 +1,30 @@
+import { useDispatch, useSelector } from 'react-redux'
+import './MenuAberto.css'
+import { reduzir, incrementar } from '../../store/Reducer'
+
+function MenuAberto({ handleCarrinho }) {
+  const { total } = useSelector((state) => state)
+  const dispatch = useDispatch()
+  const itens = Object.values(total)
+
+  return (
+    <div className='nav'>
+      <div className='open'>
+        <button onClick={handleCarrinho} className='closeCarrinho'>X</button>
+
+        {itens.map((item, index) => (
+          item.quantidade > 0 && (
+            <div key={index} className="itemCarrinho">
+              <p>{item.nome}</p>
+              <p>Qtd: {item.quantidade}</p>
+              <button onClick={() => dispatch(reduzir({index: item.index}))}>-</button>
+              <button onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default MenuAberto
