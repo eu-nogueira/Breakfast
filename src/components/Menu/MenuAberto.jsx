@@ -17,8 +17,8 @@ function MenuAberto({ handleCarrinho }) {
             <div key={index} className="itemCarrinho">
               <p>{item.nome}</p>
               <p>Qtd: {item.quantidade}</p>
-              <button onClick={() => dispatch(reduzir({index: item.index}))}>-</button>
-              <button onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
+              <button className='btnMenu' onClick={() => dispatch(reduzir({index: item.index}))}>-</button>
+              <button className='btnMenu' onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
             </div>
           )
         ))}
