@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Menu.css'
 import { useSelector } from 'react-redux'
 import MenuAberto from './MenuAberto'
+import imagem from '../../../public/img/f2133795-2dba-4558-b4a0-85988246efdf-removebg-preview.png'
 
 function Menu() {
   const [carrinho, setCarrinho] = useState(false)
@@ -19,6 +20,9 @@ function Menu() {
 
   return (
     <div>
+      <div className="logo">
+        <img src={imagem} alt="logo" width={90} />
+      </div>
       <ul className='navbar'>
         <li>Home</li>
         <li>Cardápio</li>

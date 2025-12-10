@@ -7,6 +7,18 @@
     padding: 5vh;
 }
 
+.logo {
+    position: absolute;
+    left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    background-color: #8d4925;
+    height: 85px;
+}
+
 .navbar li {
     color: white;
     background-color: #5d2417;
