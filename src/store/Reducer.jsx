@@ -23,9 +23,17 @@ const slice = createSlice({
       if (state[index] && state[index].quantidade > 0) {
         state[index].quantidade -= 1;
       }
+    },
+
+    zerar(state, action) {
+      const { index } = action.payload
+
+      if (state[index] && state[index].quantidade > 0) {
+        state[index].quantidade = 0
+      }
     }
   }
 });
 
-export const { incrementar, reduzir } = slice.actions;
+export const { incrementar, reduzir, zerar } = slice.actions;
 export default slice.reducer;

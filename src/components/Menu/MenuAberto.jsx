@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './MenuAberto.css'
-import { reduzir, incrementar } from '../../store/Reducer'
+import { reduzir, incrementar, zerar } from '../../store/Reducer'
 
 function MenuAberto({ handleCarrinho }) {
   const { total } = useSelector((state) => state)
@@ -19,6 +19,7 @@ function MenuAberto({ handleCarrinho }) {
               <p>Qtd: {item.quantidade}</p>
               <button className='btnMenu' onClick={() => dispatch(reduzir({index: item.index}))}>-</button>
               <button className='btnMenu' onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
+              <button className='btnMenu' onClick={() => dispatch(zerar({index: item.index}))}>r</button>
             </div>
           )
         ))}
