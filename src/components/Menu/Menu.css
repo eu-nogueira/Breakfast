@@ -12,6 +12,8 @@
     left: 5%;
     display: flex;
     align-items: center;
+    min-height: 13vh;
+    background-color: #8d4925;
 }
 
 .logo img {

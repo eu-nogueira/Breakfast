@@ -5,6 +5,7 @@ import { incrementar, reduzir } from '../../store/Reducer'
 
 function Cardapio() {
     const [ doces, setDoces ] = useState([])
+    const [ produtoAdicionado, setProdutoAdicionado] = useState(false)
     const quantidadeItem = useSelector(state => state.total)
     const dispatch = useDispatch()
 
@@ -13,6 +14,10 @@ function Cardapio() {
             index: doce.idMeal,
             nome: doce.strMeal
         }))
+        setProdutoAdicionado(true)
+        setTimeout(() => {
+            setProdutoAdicionado(false)
+        }, 2000)
     }
     
     function diminuir(doce) {
@@ -46,6 +51,10 @@ function Cardapio() {
             </div>
         </div>
     ))}
+
+    { produtoAdicionado &&
+        <p className='produtoAdicionado'>Produto adicionado ao carrinho!</p>
+    }
     </div>
   )
 }
