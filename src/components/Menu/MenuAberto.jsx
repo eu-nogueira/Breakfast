@@ -11,8 +11,9 @@ function MenuAberto({ handleCarrinho }) {
     <div className='nav'>
       <div className='open'>
         <button onClick={handleCarrinho} className='closeCarrinho'>X</button>
-
-        {itens.map((item, index) => (
+        {console.log(itens)}
+        {itens.length > 0 ?
+        itens.map((item, index) => (
           item.quantidade > 0 && (
             <div key={index} className="itemCarrinho">
               <p>{item.nome}</p>
@@ -22,7 +23,9 @@ function MenuAberto({ handleCarrinho }) {
               <button className='btnMenu' onClick={() => dispatch(zerar({index: item.index}))}>r</button>
             </div>
           )
-        ))}
+        )) : 
+        <p className='carrinhoVazio'>Poxa, seu carrinho esta vazio...</p>
+        }
       </div>
     </div>
   )

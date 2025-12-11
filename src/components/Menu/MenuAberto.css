@@ -54,3 +54,15 @@
     cursor: pointer;
     margin-left: 2px;
 }
+
+.carrinhoVazio {
+    display: flex;
+    justify-content: center;
+    margin-top: 50%;
+    color: cornsilk;
+    background-color: #5d2417;
+    width: 80%;
+    margin: 50% auto;
+    border-radius: 5px;
+    font-family: "Elms Sans", sans-serif;
+}

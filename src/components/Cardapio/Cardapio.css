@@ -42,3 +42,27 @@
     display: flex;
     align-items: center;
 }
+
+.produtoAdicionado {
+    height: 2rem;
+    position: sticky;
+    bottom: 2%;
+    width: 70%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #703c20;
+    margin-left: 100%;
+    color: white;
+    animation: animaModalProdutoAdicionado .5s;
+}
+
+@keyframes animaModalProdutoAdicionado {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
