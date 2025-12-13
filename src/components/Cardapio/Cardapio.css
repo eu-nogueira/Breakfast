@@ -58,6 +58,21 @@
     animation: animaModalProdutoAdicionado .5s;
 }
 
+.produtoRemovido {
+    height: 2rem;
+    position: sticky;
+    bottom: 2%;
+    width: 70%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #602525;
+    margin-left: 100%;
+    color: white;
+    animation: animaModalProdutoAdicionado .5s;
+}
+
 @keyframes animaModalProdutoAdicionado {
     from {
         opacity: 0;

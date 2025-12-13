@@ -6,6 +6,7 @@ import { incrementar, reduzir } from '../../store/Reducer'
 function Cardapio() {
     const [ doces, setDoces ] = useState([])
     const [ produtoAdicionado, setProdutoAdicionado] = useState(false)
+    const [ produtoRemovido, setProdutoRemovido] = useState(false)
     const quantidadeItem = useSelector(state => state.total)
     const dispatch = useDispatch()
 
@@ -22,6 +23,10 @@ function Cardapio() {
     
     function diminuir(doce) {
         dispatch(reduzir({index: doce.idMeal}))
+        setProdutoRemovido(true)
+        setTimeout(() => {
+            setProdutoRemovido(false)
+        }, 2000)
     }
 
     async function buscarDados() {
@@ -54,6 +59,10 @@ function Cardapio() {
 
     { produtoAdicionado &&
         <p className='produtoAdicionado'>Produto adicionado ao carrinho!</p>
+    }
+    
+    { produtoRemovido &&
+        <p className='produtoRemovido'>Produto removido do carrinho!</p>
     }
     </div>
   )
