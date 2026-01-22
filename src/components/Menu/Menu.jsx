@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Menu.css'
 import { useSelector } from 'react-redux'
-import MenuAberto from './MenuAberto'
-import imagem from '../../../public/img/f2133795-2dba-4558-b4a0-85988246efdf-removebg-preview.png'
+import imagem from '/img/f2133795-2dba-4558-b4a0-85988246efdf-removebg-preview.png'
+import CarrinhoAberto from './CarrinhoAberto'
 
 function Menu() {
   const [carrinho, setCarrinho] = useState(false)
@@ -29,7 +29,7 @@ function Menu() {
         <li>Sobre nós</li>
 
         {carrinho ? (
-          <MenuAberto handleCarrinho={handleCarrinho} />
+          <CarrinhoAberto handleCarrinho={handleCarrinho} />
         ) : (
           <li onClick={handleCarrinho}>
             Carrinho ({totalItensCarrinho})
