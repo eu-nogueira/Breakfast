@@ -26,7 +26,6 @@ const slice = createSlice({
         delete state[index]
       }
     },
-
     zerar(state, action) {
       const { index } = action.payload
 

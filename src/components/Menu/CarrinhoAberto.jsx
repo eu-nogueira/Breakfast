@@ -11,10 +11,10 @@ function CarrinhoAberto({ handleCarrinho }) {
     <div className='nav'>
       <div className='open'>
         <button onClick={handleCarrinho} className='closeCarrinho'>X</button>
-        {console.log(itens)}
         {itens.length > 0 ?
         itens.map((item, index) => (
           item.quantidade > 0 && (
+            <>
             <div key={index} className="itemCarrinho">
               <p>{item.nome}</p>
               <p>Qtd: {item.quantidade}</p>
@@ -22,6 +22,8 @@ function CarrinhoAberto({ handleCarrinho }) {
               <button className='btnMenu' onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
               <button className='btnMenu' onClick={() => dispatch(zerar({index: item.index}))}>r</button>
             </div>
+              <p className='checkout'>Efetuar pagamento</p>
+            </>
           )
         )) : 
         <p className='carrinhoVazio'>Poxa, seu carrinho esta vazio...</p>
