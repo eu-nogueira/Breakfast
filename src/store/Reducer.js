@@ -16,12 +16,14 @@ const slice = createSlice({
       }
       state[index].quantidade += 1;
     },
-
+    
     reduzir(state, action) {
       const { index } = action.payload;
 
-      if (state[index] && state[index].quantidade > 0) {
+      if (state[index] && state[index].quantidade > 1) {
         state[index].quantidade -= 1;
+      } else {
+        delete state[index]
       }
     },
 
@@ -29,7 +31,7 @@ const slice = createSlice({
       const { index } = action.payload
 
       if (state[index] && state[index].quantidade > 0) {
-        state[index].quantidade = 0
+        delete state[index]
       }
     }
   }

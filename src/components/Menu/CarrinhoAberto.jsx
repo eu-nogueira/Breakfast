@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import './MenuAberto.css'
+import './CarrinhoAberto.css'
 import { reduzir, incrementar, zerar } from '../../store/Reducer'
 
-function MenuAberto({ handleCarrinho }) {
+function CarrinhoAberto({ handleCarrinho }) {
   const { total } = useSelector((state) => state)
   const dispatch = useDispatch()
   const itens = Object.values(total)
@@ -31,4 +31,4 @@ function MenuAberto({ handleCarrinho }) {
   )
 }
 
-export default MenuAberto
+export default CarrinhoAberto
