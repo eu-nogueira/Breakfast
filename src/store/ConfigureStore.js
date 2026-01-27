@@ -1,10 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import total from "./Reducer";
+import BuscarDados from "./BuscarDados";
 
-const store = configureStore ({
-    reducer: {
-        total
-    }
+const reducers = combineReducers({
+    total,
+    BuscarDados
+})
+
+const store = configureStore({
+    reducer: reducers
 })
 
 export default store
