@@ -28,9 +28,9 @@ const buscarDados = createSlice({
 export const buscarDadosThunk = () => async (dispatch) => {
     try {
         dispatch(fetchStarted())
-        
-        const apiUrl = import.meta.env.VITE_API_URL
 
+        const apiUrl = import.meta.env.VITE_API_URL
+        console.log(apiUrl)
         const response = await fetch(`${apiUrl}/search.php?s=cake`)
         const dados = await response.json()
 
