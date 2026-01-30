@@ -1,0 +1,67 @@
+.modalProdutoAberto {
+    background-color: rgb(150, 91, 55);
+    width: 50%;
+    height: 50vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: wheat;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: scroll;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.imgProduto, .detalheProduto {
+    margin-top: 1rem;
+}
+
+.listaIngredientes {
+    list-style: none;
+    color: white;
+    border-bottom: 1px solid #dbdbdd;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+}
+
+.tittle {
+    border-bottom: 1px solid #dbdbdd;
+    padding-bottom: 1rem;
+}
+
+.instrucoes {
+    color: white;
+    font-size: 10pt;
+    font-weight: lighter;
+}
+
+.btnCloseModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 200px;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-weight: lighter;
+    padding: .5rem;
+}
+
+.tittleTags {
+    color: white;
+}
+
+.tag {
+    background-color: wheat;
+    border-radius: 5px;
+    padding: 2px;
+    color: #8d4925;
+}

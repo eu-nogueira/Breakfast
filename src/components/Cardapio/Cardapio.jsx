@@ -4,11 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { incrementar, reduzir } from '../../store/Reducer'
 import { buscarDadosThunk } from '../../store/BuscarDados'
 import ListaProdutos from '../ListaProdutos/ListaProdutos'
+import { closeModalRedux, openModalRedux } from '../../store/Modal'
 
 function Cardapio() {
     const [ produtoAdicionado, setProdutoAdicionado] = useState(false)
     const [ produtoRemovido, setProdutoRemovido] = useState(false)
+    const [ selectedCake, setSelectedCake] = useState('')
     const dados = useSelector(state => state.BuscarDados.data)
+    const modal = useSelector(state => state.modal)
     const doces = dados?.meals || []
     const dispatch = useDispatch()
 
@@ -31,6 +34,15 @@ function Cardapio() {
         }, 2000)
     }
 
+    function openModal(index) {
+        setSelectedCake(index)
+        dispatch(openModalRedux())
+    }
+
+    function closeModal() {
+        dispatch(closeModalRedux())
+    }
+
     useEffect(() => {
         dispatch(buscarDadosThunk())
     }, [])
@@ -38,7 +50,14 @@ function Cardapio() {
   return (
     <div className='cardapio'>
 
-        < ListaProdutos doces={doces} diminuir={diminuir} aumentar={aumentar}/>
+        < ListaProdutos doces={doces} 
+                        diminuir={diminuir} 
+                        aumentar={aumentar} 
+                        modal={modal} 
+                        openModal={openModal}
+                        selectedCake={selectedCake}
+                        closeModal={closeModal}
+                />
 
         { produtoAdicionado &&
             <p className='produtoAdicionado'>Produto adicionado ao carrinho!</p>
