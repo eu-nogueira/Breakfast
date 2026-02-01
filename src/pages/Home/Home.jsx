@@ -1,4 +1,5 @@
-import imgCafe from '../../public/img/afe0e4b7-932a-4b71-873e-274608883568.png'
+import { NavLink } from 'react-router-dom'
+import imgCafe from '../../../public/img/afe0e4b7-932a-4b71-873e-274608883568.png'
 import './Home.css'
 
 function Home() {
@@ -11,9 +12,9 @@ function Home() {
           ingredientes selecionados e aquele sabor que conquista na primeira mordida. 
           O equilíbrio ideal entre rapidez, qualidade e prazer em cada detalhe.
         </p>
-        <div class="seta"></div>
-        <div class="seta"></div>
-        <button className='btnVerMenu'>Ver Menu</button>
+        <div className="seta"></div>
+        <div className="seta"></div>
+        <button className='btnVerMenu'><NavLink to="cardapio">Ver Menu</NavLink></button>
       </div>
       <div className="fotoProduto">
           <img src={imgCafe} alt="imagem cafe" width={500} className='imgCafe'/>

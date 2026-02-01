@@ -3,6 +3,7 @@ import './Menu.css'
 import { useSelector } from 'react-redux'
 import imagem from '/img/f2133795-2dba-4558-b4a0-85988246efdf-removebg-preview.png'
 import CarrinhoAberto from './CarrinhoAberto'
+import { NavLink } from 'react-router-dom'
 
 function Menu() {
   const [carrinho, setCarrinho] = useState(false)
@@ -24,9 +25,9 @@ function Menu() {
         <img src={imagem} alt="logo" width={90} />
       </div>
       <ul className='navbar'>
-        <li>Home</li>
-        <li>Cardápio</li>
-        <li>Sobre nós</li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/cardapio'>Cardápio</NavLink></li>
+        <li><NavLink to='/sobreNos'>Sobre nós</NavLink></li>
 
         {carrinho ? (
           <CarrinhoAberto handleCarrinho={handleCarrinho} />

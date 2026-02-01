@@ -3,7 +3,7 @@ import './Cardapio.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementar, reduzir } from '../../store/Reducer'
 import { buscarDadosThunk } from '../../store/BuscarDados'
-import ListaProdutos from '../ListaProdutos/ListaProdutos'
+import ListaProdutos from '../../components/ListaProdutos/ListaProdutos'
 import { closeModalRedux, openModalRedux } from '../../store/Modal'
 
 function Cardapio() {
