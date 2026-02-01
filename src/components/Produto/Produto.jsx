@@ -10,7 +10,7 @@ function Produto({ doce, closeModal }) {
         <div className="imgProduto">
             <img src={doce.strMealThumb} width={150} />
             <figure>{doce.strMeal}</figure>
-               {doce.strTags && <p className="tittleTags">tags:</p>}
+               {doce.strTags && <p className="tittleTags">Tags:</p>}
             <ul className="tags">
               {formataTags?.map((tag, key) => (
                 <li key={key} className="tag">{tag}</li>
