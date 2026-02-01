@@ -22,12 +22,12 @@ function CarrinhoAberto({ handleCarrinho }) {
               <button className='btnMenu' onClick={() => dispatch(incrementar({index: item.index, nome: item.nome}))}>+</button>
               <button className='btnMenu' onClick={() => dispatch(zerar({index: item.index}))}>r</button>
             </div>
-              <p className='checkout'>Efetuar pagamento</p>
             </>
           )
         )) : 
         <p className='carrinhoVazio'>Poxa, seu carrinho esta vazio...</p>
-        }
+      }
+      {itens.length > 0 && (<p className='checkout'>Efetuar pagamento</p>)}
       </div>
     </div>
   )
