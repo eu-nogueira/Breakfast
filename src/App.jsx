@@ -6,6 +6,7 @@ import Menu from './components/Menu/Menu'
 import store from './store/ConfigureStore'
 import { Route, Routes } from 'react-router-dom'
 import SobreNos from './pages/SobreNos/SobreNos'
+import Footer from './components/Rodape/Footer'
 
 
 function App() {
@@ -13,12 +14,12 @@ function App() {
   return (
     <Provider store={store}>
       <Menu />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cardapio" element={<Cardapio />} />
         <Route path="/sobreNos" element={<SobreNos />} />
       </Routes>
+      <Footer />
     </Provider>
   )
 }
