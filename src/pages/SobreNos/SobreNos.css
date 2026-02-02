@@ -1,0 +1,14 @@
+.sobreNos {
+    margin: auto;
+    text-align: center;
+}
+
+.imgCoffe {
+    margin-top: 2rem;
+}
+
+.textSobreNos, .titleSobreNos {
+    padding: 1rem;
+    color: #643319;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
