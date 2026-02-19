@@ -7,9 +7,9 @@ import { NavLink } from 'react-router-dom'
 
 function Menu() {
   const [carrinho, setCarrinho] = useState(false)
-  const quantidade = useSelector(state => state.total)
+  const quantidade = useSelector(state => state.total.cakes)
 
-  const arrayQuantidade = Object.values(quantidade)
+  const arrayQuantidade = Object.values(quantidade || 0)
 
   const totalItensCarrinho = arrayQuantidade.reduce((acc, item) => {
     return acc + (item.quantidade || 0)

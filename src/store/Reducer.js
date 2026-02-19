@@ -1,38 +1,57 @@
 import { createSlice } from "@reduxjs/toolkit";
+import getLocalStorage from "./GetLocalStorage";
+import toLocalStorage from "./toLocalStorage";
 
 
 const slice = createSlice({
   name: "total",
-  initialState: {},
+  initialState: {
+      cakes: getLocalStorage('cakes', {})
+  },
   reducers: {
-    incrementar(state, action) {
+    incrementar: {
+    reducer: (state, action) => {
       const { index, nome } = action.payload;
-      if (!state[index]) {
-        state[index] = {
+      if (!state.cakes[index]) {
+        state.cakes[index] = {
           index,
           quantidade: 0,
           nome
         };
       }
-      state[index].quantidade += 1;
+      state.cakes[index].quantidade += 1;
+      },
+    prepare(payload) {
+      return toLocalStorage(payload)
+    }
     },
     
-    reduzir(state, action) {
+    reduzir: {
+    reducer: (state, action) => {
       const { index } = action.payload;
-
-      if (state[index] && state[index].quantidade > 1) {
-        state[index].quantidade -= 1;
+      if (state.cakes[index] && state.cakes[index].quantidade > 1) {
+        state.cakes[index].quantidade -= 1;
       } else {
-        delete state[index]
+        delete state.cakes[index]
       }
     },
-    zerar(state, action) {
+    prepare(payload) {
+      return toLocalStorage(payload)
+    }
+  },
+
+    zerar: {
+    reducer: (state, action) => {
       const { index } = action.payload
 
-      if (state[index] && state[index].quantidade > 0) {
-        delete state[index]
+      if (state.cakes[index] && state.cakes[index].quantidade > 0) {
+        delete state.cakes[index]
       }
+    },
+    prepare(payload) {
+      return toLocalStorage(payload)
     }
+  }
   }
 });
 

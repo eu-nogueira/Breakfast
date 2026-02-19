@@ -3,9 +3,9 @@ import './CarrinhoAberto.css'
 import { reduzir, incrementar, zerar } from '../../store/Reducer'
 
 function CarrinhoAberto({ handleCarrinho }) {
-  const { total } = useSelector((state) => state)
+  const { cakes } = useSelector((state) => state.total)
   const dispatch = useDispatch()
-  const itens = Object.values(total)
+  const itens = Object.values(cakes)
 
   return (
     <div className='nav'>

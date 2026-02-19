@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import imgCafe from '../../../public/img/afe0e4b7-932a-4b71-873e-274608883568.png'
+import imgCafe from '/img/afe0e4b7-932a-4b71-873e-274608883568.png'
 import './Home.css'
 
 function Home() {

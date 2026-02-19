@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import total from "./Reducer";
 import BuscarDados from "./BuscarDados";
 import modal from "./Modal"
+import localStorage from "./LocalStorage";
 
 const reducers = combineReducers({
     total,
@@ -10,7 +11,8 @@ const reducers = combineReducers({
 })
 
 const store = configureStore({
-    reducer: reducers
+    reducer: reducers,
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(localStorage)
 })
 
 export default store
