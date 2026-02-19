@@ -3,8 +3,7 @@ import Produto from "../Produto/Produto"
 import "./ListaProdutos.css"
 
 function ListaProdutos({doces, diminuir, aumentar, openModal, modal, selectedCake, closeModal}) {
-    const quantidadeItem = useSelector(state => state.total)
-
+    const quantidadeItem = useSelector(state => state.total.cakes) || {}
   return (
     <>
         {doces?.map((doce, index) => (

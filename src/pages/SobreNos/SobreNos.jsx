@@ -1,5 +1,5 @@
 import "./SobreNos.css"
-import imgCoffeShop from '../../../public/img/CoffeShopp.png'
+import imgCoffeShop from '/img/CoffeShopp.png'
 
 function SobreNos() {
   return (
