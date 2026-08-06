@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Cardapio.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementar, reduzir } from '../../store/Reducer'
@@ -14,6 +14,7 @@ function Cardapio() {
     const modal = useSelector(state => state.modal)
     const doces = dados?.meals || []
     const dispatch = useDispatch()
+    const toastProdutoRef = useRef()
 
     function aumentar(doce) {
         dispatch(incrementar({
@@ -21,7 +22,8 @@ function Cardapio() {
             nome: doce.strMeal
         }))
         setProdutoAdicionado(true)
-        setTimeout(() => {
+        clearTimeout(toastProdutoRef.current)
+        toastProdutoRef.current = setTimeout(() => {
             setProdutoAdicionado(false)
         }, 2000)
     }
@@ -29,7 +31,8 @@ function Cardapio() {
     function diminuir(doce) {
         dispatch(reduzir({index: doce.idMeal}))
         setProdutoRemovido(true)
-        setTimeout(() => {
+        clearTimeout(toastProdutoRef.current)
+        toastProdutoRef.current = setTimeout(() => {
             setProdutoRemovido(false)
         }, 2000)
     }
