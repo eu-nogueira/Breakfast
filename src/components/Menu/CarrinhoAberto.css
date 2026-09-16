@@ -73,8 +73,8 @@
     position: sticky;
     bottom: 1rem;
     width: 90%;
-    padding: 5px;
-    margin: auto;
+    padding: .5rem;
+    margin: .5rem auto;
     border-radius: 5px;
     text-align: center;
     color: white;
@@ -85,4 +85,17 @@
 .checkout:hover {
     background-color: #8d3a27;
     font-size: 13pt;
+}
+
+.checkoutTotal {
+    position: sticky;
+    font-weight: bold;
+    font-size: large;
+    bottom: 1rem;
+    width: 70%;
+    padding: 5px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
 }
