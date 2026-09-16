@@ -4,6 +4,7 @@ import "./ListaProdutos.css"
 
 function ListaProdutos({doces, diminuir, aumentar, openModal, modal, selectedCake, closeModal}) {
     const quantidadeItem = useSelector(state => state.total.cakes) || {}
+    const precoItem = useSelector(state => state.total.cakes) || {}
   return (
     <>
         {doces?.map((doce, index) => (
@@ -13,6 +14,7 @@ function ListaProdutos({doces, diminuir, aumentar, openModal, modal, selectedCak
                  < Produto doce={doce} closeModal={closeModal} />
                 }
                     <p>{doce.strMeal}</p>
+                    <p>R$ {precoItem[doce.idMeal]?.precoUnitario.toFixed(2).toString().replace('.', ',') || '7,75'}</p>
                     <div className="qtdItem">
                     <button onClick={() => diminuir(doce)}>-</button>
                     <p>{quantidadeItem[doce.idMeal]?.quantidade || 0}</p>

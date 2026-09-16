@@ -8,11 +8,17 @@ import { NavLink } from 'react-router-dom'
 function Menu() {
   const [carrinho, setCarrinho] = useState(false)
   const quantidade = useSelector(state => state.total.cakes)
+  const valorTotal = useSelector(state => state.total.cakes)
 
   const arrayQuantidade = Object.values(quantidade || 0)
+  const arrayValor = Object.values(valorTotal || 0)
 
   const totalItensCarrinho = arrayQuantidade.reduce((acc, item) => {
     return acc + (item.quantidade || 0)
+  }, 0)
+  
+  const valorTotalCarrinho = arrayValor.reduce((acc, item) => {
+    return acc + (item.precoUnitario || 0)
   }, 0)
 
   function handleCarrinho() {
@@ -34,6 +40,7 @@ function Menu() {
         ) : (
           <li onClick={handleCarrinho}>
             Carrinho ({totalItensCarrinho})
+            R$ {valorTotalCarrinho.toFixed(2).toString().replace('.', ',')}
           </li>
         )}
       </ul>
